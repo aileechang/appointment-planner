@@ -11,10 +11,45 @@ export const ContactForm = ({
 }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={name} onChange={setName} />
-      <input type="tel" value={phone} onChange={setPhone} pattern="[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}" />
-      <input type="email" value={email} onChange={setEmail} />
-      <button type="submit" >Submit</button>
+      <label>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          placeholder="Contact Name"
+          aria-label="Contact Name"
+        />
+      </label>
+      <br />
+      <label>
+        <input
+          type="tel"
+          name="phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+          // regex is for US phone numbers
+          pattern="[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}"
+          placeholder="Contact Phone (###-###-####)"
+          aria-label="Contact Phone"
+        />
+      </label>
+      <br />
+      <label>
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          placeholder="Contact Email"
+          aria-label="Contact Email"
+        />
+      </label>
+      <br />
+      <input type="submit" value="Add Contact" aria-label="Add Contact"/>
     </form>
   );
 };
