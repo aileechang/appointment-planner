@@ -47,9 +47,9 @@ export const ContactsPage = ({ contactsData, addNewContact }) => {
           name={name}
           phone={phone}
           email={email}
-          handleNameChange={handleNameChange}
-          handlePhoneChange={handlePhoneChange}
-          handleEmailChange={handleEmailChange}
+          setName={handleNameChange}
+          setPhone={handlePhoneChange}
+          setEmail={handleEmailChange}
           handleSubmit={handleSubmit}
         /> 
       </section>
